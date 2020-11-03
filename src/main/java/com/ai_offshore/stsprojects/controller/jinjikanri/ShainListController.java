@@ -11,6 +11,8 @@ public class ShainListController {
 
 	@GetMapping("/shainlist")
 	public String index(Model model) {
+		
+		
 		return "/jinjikanri/shainlist";
 	}
 }
