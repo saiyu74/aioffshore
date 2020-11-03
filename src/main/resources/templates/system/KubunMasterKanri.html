@@ -1,0 +1,160 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- (1)共通headerで置き換える -->
+<head th:replace="common :: meta_header('top',~{::link},~{::script})">
+<!-- (2)このページ固有で読み込むCSS/JS はここに追加する -->
+</head>
+<body class="hold-transition sidebar-mini">
+	<div class="wrapper">
+
+		<!-- Navbar -->
+		<div th:replace="common :: nav-bar"></div>
+		<!-- /.navbar -->
+		<div th:replace="common :: main-sidebar"></div>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<div class="content-header">
+				<div class="container-fluid">
+					<div class="row mb-2">
+						<div class="col-sm-6">
+							<h1 class="m-0 text-dark">区分マスター管理</h1>
+						</div>
+						<!-- /.col -->
+						<div class="col-sm-6">
+							<ol class="breadcrumb float-sm-right">
+								<li class="breadcrumb-item"><a href="/">ダッシュボード</a></li>
+								<li class="breadcrumb-item active">区分マスター管理</li>
+							</ol>
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+			<!-- /.content-header -->
+
+			<!-- Main content -->
+			<div th:fragment="content" class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="card ">
+								<div class="card-header">
+									<h3 class="card-title">検索条件</h3>
+
+									<div class="card-tools">
+										<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+											<i class="fas fa-minus"></i>
+										</button>
+										<button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+											<i class="fas fa-times"></i>
+										</button>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="row">
+													<div class="col-4">
+														<label for="sex">区分種別名</label> <input type="email" class="form-control" id="name" placeholder="KBS9999"></label>
+													</div>
+													<div class="col-4">
+														<label for="sex">区分名</label> <input type="email" class="form-control" id="name" placeholder="区分種別名"></label>
+													</div>
+													<div class="col-4">
+														<label for="sex">区分種別短名</label> <input type="email" class="form-control" id="name" placeholder="区分種別短名"></label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /.card-body -->
+								<div class="card-footer">
+									<button type="submit" class="btn btn-info">新規登録</button>
+									<button type="button" class="btn btn-primary float-right">検索</button>
+								</div>
+								<!-- /.card-footer-->
+							</div>
+							<!-- /.card -->
+						</div>
+						<!-- /.col-md-6 -->
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="card">
+								<div class="card-header">
+									<h3 class="card-title">区分種別一覧</h3>
+								</div>
+								<!-- /.card-header -->
+								<div class="card-body">
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th>種別コード</th>
+												<th>種別名</th>
+												<th>種別短命</th>
+												<th col-span="2">操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>KBS001</td>
+												<td>性別区分</td>
+												<td>性別</td>
+												<td>
+													<div class="btn-group" role="group" aria-label="ボタングループサンプル">
+														<button type="button" class="btn btn-block btn-info btn-sm">修正</button>
+														<br />
+														<button type="button" class="btn btn-block btn-danger btn-sm">削除</button>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>KBS002</td>
+												<td>性別区分</td>
+												<td>性別</td>
+												<td>
+													<div class="btn-group" role="group" aria-label="ボタングループサンプル">
+														<button type="button" class="btn btn-block btn-info btn-sm">修正</button>
+														<br />
+														<button type="button" class="btn btn-block btn-danger btn-sm">削除</button>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- /.card-body -->
+								<div class="card-footer clearfix">
+									<ul class="pagination pagination-sm m-0 float-right">
+										<li class="page-item"><a class="page-link" href="#">«</a></li>
+										<li class="page-item"><a class="page-link" href="#">1</a></li>
+										<li class="page-item"><a class="page-link" href="#">»</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+
+		<!-- Control Sidebar -->
+		<div th:replace="common :: control-sidebar"></div>
+		<!-- /.control-sidebar -->
+
+		<!-- Main Footer -->
+		<div th:replace="common :: main-footer"></div>
+	</div>
+	<!-- ./wrapper -->
+
+</body>
+</html>

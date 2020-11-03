@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- (1)共通headerで置き換える -->
+<head th:replace="common :: meta_header('top',~{::link},~{::script})">
+<!-- (2)このページ固有で読み込むCSS/JS はここに追加する -->
+</head>
+<body class="hold-transition sidebar-mini">
+	<div class="wrapper">
+
+		<!-- Navbar -->
+		<nav th:replace="common :: nav-bar"></nav>
+		<!-- /.navbar -->
+		<aside th:replace="common :: main-sidebar"></aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<div th:replace="common :: content-header"> class="content-header"></div>
+			<!-- /.content-header -->
+
+			<!-- Main content -->
+			<div th:replace="common :: content"> class="content-header"></div>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+
+		<!-- Control Sidebar -->
+		<aside th:replace="common :: control-sidebar"></aside>
+		<!-- /.control-sidebar -->
+
+		<!-- Main Footer -->
+		<footer th:replace="common :: main-footer"> </footer>
+	</div>
+	<!-- ./wrapper -->
+
+</body>
+</html>

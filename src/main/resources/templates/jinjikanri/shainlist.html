@@ -1,0 +1,271 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- (1)共通headerで置き換える -->
+<head th:replace="common :: meta_header('top',~{::link},~{::script})">
+<!-- (2)このページ固有で読み込むCSS/JS はここに追加する -->
+</head>
+<body class="hold-transition sidebar-mini">
+	<div class="wrapper">
+
+		<!-- Navbar -->
+		<div th:replace="common :: nav-bar"></div>
+		<!-- /.navbar -->
+		<div th:replace="common :: main-sidebar"></div>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<div class="content-header">
+				<div class="container-fluid">
+					<div class="row mb-2">
+						<div class="col-sm-6">
+							<h1 class="m-0 text-dark">社員一覧</h1>
+						</div>
+						<!-- /.col -->
+						<div class="col-sm-6">
+							<ol class="breadcrumb float-sm-right">
+								<li class="breadcrumb-item"><a href="/">ダッシュボード</a></li>
+								<li class="breadcrumb-item active">社員一覧</li>
+							</ol>
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+			<!-- /.content-header -->
+
+			<!-- Main content -->
+			<div th:fragment="content" class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="card">
+								<div class="card-header">
+									<h3 class="card-title">検索条件</h3>
+
+									<div class="card-tools">
+										<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+											<i class="fas fa-minus"></i>
+										</button>
+										<button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+											<i class="fas fa-times"></i>
+										</button>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="row">
+													<div class="col-2">
+														<label for="sex">氏名</label>
+
+													</div>
+													<div class="col-9" style="margin-left: 1%; margin-top: 1%;">
+														<input type="email" class="form-control" id="name" placeholder="お名前"></label>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="row">
+													<div class="col-2">
+														<label for="sex">性別</label>
+
+													</div>
+													<div class="col-9" style="margin-left: 1%;margin-top:1%;">
+														<div class="custom-control custom-radio">
+															<input class="custom-control-input" type="radio" id="customRadio1" name="customRadio"> <label for="customRadio1" class="custom-control-label">男性</label>
+														</div>
+														<div class="custom-control custom-radio">
+															<input class="custom-control-input" type="radio" id="customRadio2" name="customRadio"><label for="customRadio2" class="custom-control-label">女性</label>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /.card-body -->
+								<div class="card-footer text-muted bg-transparent px-0">
+									<div style="margin-left: 80%; margin-right: 1%;">
+										<button type="button" class="btn btn-block btn-primary btn-theme pull-right">検索</button>
+									</div>
+								</div>
+								<!-- /.card-footer-->
+							</div>
+							<!-- /.card -->
+						</div>
+						<!-- /.col-md-6 -->
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="card">
+								<div class="card-header">
+									<h3 class="card-title">検索結果</h3>
+								</div>
+								<!-- /.card-header -->
+								<div class="card-body">
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>氏名</th>
+												<th>氏名(カナ)</th>
+												<th>性別</th>
+												<th>契約形態</th>
+												<th>所属部署</th>
+												<th>休退職</th>
+												<th col-span="2"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1.</td>
+												<td>佐井　勇</td>
+												<td>サイ　ユウ</td>
+												<td>男性</td>
+												<td>正社員</td>
+												<td>ソリューション事業部</td>
+												<td>在職</td>
+												<td>
+													<div class="btn-group" role="group" aria-label="ボタングループサンプル">
+														<button type="button" class="btn btn-block btn-info btn-sm">修正</button>
+														<br />
+														<button type="button" class="btn btn-block btn-danger btn-sm">削除</button>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>1.</td>
+												<td>佐井　勇</td>
+												<td>サイ　ユウ</td>
+												<td>男性</td>
+												<td>正社員</td>
+												<td>ソリューション事業部</td>
+												<td>在職</td>
+												<td>
+													<div class="btn-group" role="group" aria-label="ボタングループサンプル">
+														<button type="button" class="btn btn-block btn-info btn-sm">修正</button>
+														<br />
+														<button type="button" class="btn btn-block btn-danger btn-sm">削除</button>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>2.</td>
+												<td>佐井　勇</td>
+												<td>サイ　ユウ</td>
+												<td>男性</td>
+												<td>正社員</td>
+												<td>ソリューション事業部</td>
+												<td>在職</td>
+												<td>
+													<div class="btn-group" role="group" aria-label="ボタングループサンプル">
+														<button type="button" class="btn btn-block btn-info btn-sm">修正</button>
+														<br />
+														<button type="button" class="btn btn-block btn-danger btn-sm">削除</button>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>3.</td>
+												<td>佐井　勇</td>
+												<td>サイ　ユウ</td>
+												<td>男性</td>
+												<td>正社員</td>
+												<td>ソリューション事業部</td>
+												<td>在職</td>
+												<td>
+													<div class="btn-group" role="group" aria-label="ボタングループサンプル">
+														<button type="button" class="btn btn-block btn-info btn-sm">修正</button>
+														<br />
+														<button type="button" class="btn btn-block btn-danger btn-sm">削除</button>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>4.</td>
+												<td>佐井　勇</td>
+												<td>サイ　ユウ</td>
+												<td>男性</td>
+												<td>正社員</td>
+												<td>ソリューション事業部</td>
+												<td>在職</td>
+												<td>
+													<div class="btn-group" role="group" aria-label="ボタングループサンプル">
+														<button type="button" class="btn btn-block btn-info btn-sm">修正</button>
+														<br />
+														<button type="button" class="btn btn-block btn-danger btn-sm">削除</button>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>5.</td>
+												<td>佐井　勇</td>
+												<td>サイ　ユウ</td>
+												<td>男性</td>
+												<td>正社員</td>
+												<td>ソリューション事業部</td>
+												<td>在職</td>
+												<td>
+													<div class="btn-group" role="group" aria-label="ボタングループサンプル">
+														<button type="button" class="btn btn-block btn-info btn-sm">修正</button>
+														<br />
+														<button type="button" class="btn btn-block btn-danger btn-sm">削除</button>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>6.</td>
+												<td>佐井　勇</td>
+												<td>サイ　ユウ</td>
+												<td>男性</td>
+												<td>正社員</td>
+												<td>ソリューション事業部</td>
+												<td>在職</td>
+												<td>
+													<div class="btn-group" role="group" aria-label="ボタングループサンプル">
+														<button type="button" class="btn btn-block btn-info btn-sm">修正</button>
+														<br />
+														<button type="button" class="btn btn-block btn-danger btn-sm">削除</button>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- /.card-body -->
+								<div class="card-footer clearfix">
+									<ul class="pagination pagination-sm m-0 float-right">
+										<li class="page-item"><a class="page-link" href="#">«</a></li>
+										<li class="page-item"><a class="page-link" href="#">1</a></li>
+										<li class="page-item"><a class="page-link" href="#">2</a></li>
+										<li class="page-item"><a class="page-link" href="#">3</a></li>
+										<li class="page-item"><a class="page-link" href="#">»</a></li>
+									</ul>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+
+		<!-- Control Sidebar -->
+		<div th:replace="common :: control-sidebar"></div>
+		<!-- /.control-sidebar -->
+
+		<!-- Main Footer -->
+		<div th:replace="common :: main-footer"></div>
+	</div>
+	<!-- ./wrapper -->
+
+</body>
+</html>
